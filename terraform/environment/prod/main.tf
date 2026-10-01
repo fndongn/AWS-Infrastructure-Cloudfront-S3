@@ -13,3 +13,14 @@ module "cloudfront" {
 
   bucket_regional_domain_name = module.s3.bucket_regional_domain_name
 }
+
+module "monitoring" {
+  source = "../../modules/monitoring"
+
+  project_name = var.project_name
+  environment  = var.environment
+
+  distribution_id = module.cloudfront.distribution_id
+
+  alert_email = var.alert_email
+}

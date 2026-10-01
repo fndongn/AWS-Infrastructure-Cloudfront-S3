@@ -16,3 +16,7 @@ variable "environment" {
   default     = "production"
 }
 
+variable "alert_email" {
+  description = "Email address for CloudWatch alarm notifications"
+  type        = string
+}
