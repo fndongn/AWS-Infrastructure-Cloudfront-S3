@@ -24,3 +24,11 @@ module "monitoring" {
 
   alert_email = var.alert_email
 }
+
+# Audit AWS management activity across regions.
+module "cloudtrail" {
+  source = "../../modules/cloudtrail"
+
+  project_name = var.project_name
+  environment  = var.environment
+}
